@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soroti Egg Hub | Fresh eggs by the tray</title>
+  <meta name="description" content="Order fresh eggs by the tray in Soroti City. Thirty eggs per tray at one fixed price, with delivery to your area or free pickup.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="frame">
+
+  <div class="banner" id="banner" role="alert" hidden></div>
+
+  <header class="bar logo-bar">
+   <a class="brand" href="#home"><span class="brand-egg" aria-hidden="true"></span>Soroti Egg Hub</a>
+   <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-label="Open menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span></button>
+  </header>
+
+  <nav class="bar nav-bar" aria-label="Main">
+    <div class="nav">
+      <a href="#home" data-view="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"/></svg>Home</a>
+      <a href="#about" data-view="about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>About SEH</a>
+      <a href="#stations" data-view="stations"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Pickup Stations</a>
+      <a href="#product" data-view="product"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Product</a>
+      <a href="#cart" data-view="cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h3l2.5 11h10L21 7H7"/><circle cx="10" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>Cart<span class="badge" id="cartBadge" hidden>0</span></a>
+      <div class="menu">
+        <button class="navbtn" id="accountBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="accountMenu"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span id="accountLabel">Account</span></button>
+        <div class="dropdown" id="accountMenu" hidden></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="search">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    <label class="sr" for="search">Search on Soroti Egg Hub</label>
+    <input id="search" type="search" placeholder="Search on Soroti Egg Hub" autocomplete="off">
+  </div>
+
+  <main>
+    <section class="view" id="view-home">
+      <div class="panel" id="product">
+        <div class="head">
+          <h1>Choose your trays</h1>
+          <p class="stock-chip" id="stockChip" data-state="loading">Checking stock...</p>
+        </div>
+        <div class="grid" id="productGrid"></div>
+        <p class="muted" id="noMatch" hidden>No packs match that. Try "2 trays", or search "pickup" or "delivery".</p>
+        <p class="note">Need more than 3 trays? Change the amount in your cart. The more trays in an order, the lower the delivery fee.</p>
+      </div>
+    </section>
+
+    <section class="view" id="view-stations" hidden>
+      <div class="panel">
+        <h1>Pickup Stations</h1>
+        <p class="lead">Collect your trays from any of our seven stations and pay no delivery fee.</p>
+        <ul class="stations">
+          <li class="station"><div><h3>Soroti Main Market</h3><p>Free pickup, no delivery fee</p></div></li>
+          <li class="station"><div><h3>Soroti Avenue</h3><p>Free pickup, no delivery fee</p></div></li>
+          <li class="station"><div><h3>Senior Quarters</h3><p>Free pickup, no delivery fee</p></div></li>
+          <li class="station"><div><h3>Camp Swahili</h3><p>Free pickup, no delivery fee</p></div></li>
+          <li class="station"><div><h3>Madera</h3><p>Free pickup, no delivery fee</p></div></li>
+          <li class="station"><div><h3>Kichinjaji</h3><p>Free pickup, no delivery fee</p></div></li>
+          <li class="station"><div><h3>Pamba</h3><p>Free pickup, no delivery fee</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+        <section class="view" id="view-about" hidden>
+      <div class="panel">
+        <h1>About Soroti Egg Hub</h1>
+        <p class="lead">Soroti Egg Hub brings fresh eggs, sold by the tray, to the people of Soroti City who cook with them every day: rolex and chapati makers, food stalls, shops and households.</p>
+
+        <div class="about-cols">
+          <div>
+            <h2>What we do</h2>
+            <ul class="ticks">
+              <li>One fixed price for every tray of 30 eggs, so you always know what you will pay.</li>
+              <li>Delivery to your area, with a fee that drops as your order grows, or free collection from one of our seven pickup stations.</li>
+              <li>We sell our oldest stock first, so eggs never sit on the shelf.</li>
+            </ul>
+          </div>
+          <div>
+            <h2>How ordering works</h2>
+            <ol class="steps">
+              <li>Choose your trays and add them to your cart.</li>
+              <li>Pick delivery to your area or free pickup.</li>
+              <li>Pay with MTN Mobile Money, Airtel Money, a bank card, or when your eggs arrive.</li>
+              <li>Follow your order under My orders until it reaches you.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="maker">
+          <small>Website designed and built by</small>
+          
+          <strong>ANGATU MARTIN CS STUDENT GULU UNIVERSITY</strong>
+          
+          <span>Developer of the Soroti Egg Hub ordering platform.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-cart" hidden>
+      <div class="panel">
+        <h1>Your cart</h1>
+
+        <div id="cartEmpty" hidden>
+          <p class="lead">Your cart is empty.</p>
+          <p class="top"><a class="btn btn-primary" href="#home">Choose your trays</a></p>
+        </div>
+
+        <div class="checkout" id="cartBody" hidden>
+          <div class="co-main">
+            <div class="co-box">
+              <h2>Trays</h2>
+              <div class="stepper">
+                <div>
+                  <span class="stepper-label">Trays of 30 eggs</span>
+                  <span class="stepper-value" id="cartCount" aria-live="polite">1</span>
+                </div>
+                <div class="stepper-buttons">
+                  <button class="stepper-btn" id="cartMinus" type="button" aria-label="Remove one tray">&minus;</button>
+                  <button class="stepper-btn" id="cartPlus" type="button" aria-label="Add one tray">+</button>
+                </div>
+              </div>
+              <button class="link" id="cartClear" type="button">Remove all trays</button>
+            </div>
+
+            <div class="co-box">
+              <h2>Delivery or pickup</h2>
+              <div class="segmented" role="group" aria-label="Delivery or pickup">
+                <button type="button" id="cDelivery" aria-pressed="true">Delivery</button>
+                <button type="button" id="cPickup" aria-pressed="false">Pickup</button>
+              </div>
+              <div id="deliveryFields">
+                <label class="field">Delivery area
+                  <select id="cZone"><option value="">Choose your area</option></select>
+                </label>
+                <label class="field">Street, landmark or shop name
+                  <input id="cAddress" autocomplete="street-address" placeholder="Near Main Market gate, blue shop">
+                </label>
+              </div>
+              <p class="muted pickup-note" id="pickupNote" hidden>Collect from any of our <a href="#stations">pickup stations</a> and pay no delivery fee.</p>
+              <label class="field">Phone number for this order
+                <input id="cPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0771234567">
+              </label>
+            </div>
+
+            <div class="co-box">
+              <h2>Payment</h2>
+              <div class="pay" id="payOptions"></div>
+              <div id="refBox" hidden>
+                <p class="muted" id="refHint"></p>
+                <label class="field">Transaction ID
+                  <input id="cRef" autocomplete="off" placeholder="For example MP261107ABC">
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <aside class="summary">
+            <h2>Order summary</h2>
+            <div class="totals">
+              <div><span id="sEggsLabel">Eggs</span><span id="sEggs">-</span></div>
+              <div><span>Delivery fee</span><span id="sFee">-</span></div>
+              <div class="grand"><span>Total</span><span id="sTotal">-</span></div>
+            </div>
+            <p class="error" id="coError" role="alert"></p>
+            <button class="btn btn-primary wide" id="placeOrder" type="button">Place order</button>
+            <p class="note">You need an account to place an order. The final price is confirmed by our server.</p>
+          </aside>
+        </div>
+
+        <div class="done" id="orderDone" hidden>
+          <h2>Thank you, your order is placed</h2>
+          <p class="code" id="doneCode"></p>
+          <p class="lead">Total: <strong id="doneTotal"></strong></p>
+          <p id="doneNote"></p>
+          <p class="top"><a class="btn btn-primary" href="#home">Back to the trays</a></p>
+        </div>
+      </div>
+    </section>
+
+        <section class="view" id="view-orders" hidden>
+      <div class="panel">
+        <div class="head">
+          <h1>My orders</h1>
+          <button class="btn btn-ghost" id="ordersRefresh" type="button">Refresh</button>
+        </div>
+        <p class="lead" id="ordersMsg"></p>
+        <p class="top">
+          <button class="btn btn-primary" id="ordersLogin" type="button" hidden>Log in</button>
+          <a class="btn btn-primary" id="ordersShop" href="#home" hidden>Choose your trays</a>
+        </p>
+        <div class="orders" id="ordersList"></div>
+      </div>
+    </section>
+
+        <section class="view" id="view-admin" hidden>
+      <div class="panel">
+        <div class="head">
+          <h1>Admin dashboard</h1>
+          <button class="btn btn-ghost" id="adminRefresh" type="button">Refresh</button>
+        </div>
+        <p class="lead" id="adminMsg"></p>
+        <p class="top"><button class="btn btn-primary" id="adminLogin" type="button" hidden>Log in</button></p>
+        <div id="adminBody" hidden>
+          <div class="alertbar" id="stockAlert" hidden></div>
+          <div class="tiles" id="adminTiles"></div>
+          <div class="filters" id="orderFilters">
+            <button type="button" data-f="active" aria-pressed="true">Active</button>
+            <button type="button" data-f="pay" aria-pressed="false">Payments to check</button>
+            <button type="button" data-f="refund" aria-pressed="false">Refunds needed</button>
+            <button type="button" data-f="delivered" aria-pressed="false">Delivered</button>
+            <button type="button" data-f="cancelled" aria-pressed="false">Cancelled</button>
+            <button type="button" data-f="all" aria-pressed="false">All</button>
+          </div>
+          <label class="sr" for="adminSearch">Search orders</label>
+          <input class="asearch" id="adminSearch" type="search" placeholder="Search by order code, name, phone or transaction ID" autocomplete="off">
+          <div class="alist" id="adminOrders"></div>
+        </div>
+      </div>
+      <dialog class="auth wide-dlg" id="orderDialog" aria-label="Order details"><div id="orderBody"></div></dialog>
+    </section>
+  </main>
+
+  <footer class="foot-bar" id="areas">
+    <h3>We deliver to</h3>
+    <ul class="zones" id="zoneList"><li>Loading...</li></ul>
+    <p>&copy; Soroti Egg Hub &middot; Website by ANGATU MARTIN</p>
+  </footer>
+
+</div>
+
+<dialog class="auth" id="authDialog" aria-labelledby="authTitle">
+  <form id="authForm" novalidate>
+    <div class="auth-head">
+      <h2 id="authTitle">Log in</h2>
+      <button class="x" type="button" id="authClose" aria-label="Close">&times;</button>
+    </div>
+    <label class="field" data-signup>Full name<input id="fName" autocomplete="name"></label>
+    <label class="field">Phone number<input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0771234567"></label>
+    <label class="field" data-signup>You are a
+      <select id="fType">
+        <option value="rolex_maker">Rolex or chapati maker</option>
+        <option value="food_vendor">Food stall or restaurant</option>
+        <option value="shop">Shop</option>
+        <option value="household" selected>Household</option>
+      </select>
+    </label>
+    <div class="field">
+      <label for="fPass">Password</label>
+      <div class="pass">
+        <input id="fPass" type="password" autocomplete="current-password">
+        <button class="eye" id="passToggle" type="button" aria-label="Show password" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        </button>
+      </div>
+    </div>
+    <p class="hint" data-signup>Use at least 8 characters.</p>
+    <p class="error" id="authError" role="alert"></p>
+    <button class="btn btn-primary wide" id="authSubmit" type="submit">Log in</button>
+    <p class="switch"><span id="authSwitchText">New here?</span> <button class="link" type="button" id="authSwitch">Create an account</button></p>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js" defer></script>
+</body>
+</html>
