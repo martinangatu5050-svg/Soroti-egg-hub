@@ -37,7 +37,7 @@ window.addEventListener('unhandledrejection', (e) =>
 async function request(path, options) {
   let res;
   try {
-    res = await fetch('https://onrender.com' + path, options);
+    res = await fetch('https://soroti-egg-hub-1.onrender.com/api' + path, options);
   } catch (err) {
     throw new Error('Cannot reach the shop server.');
   }
