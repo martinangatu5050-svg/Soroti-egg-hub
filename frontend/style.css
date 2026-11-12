@@ -283,3 +283,24 @@ button.arow:hover { border-color: var(--ink); background: var(--sage); }
 .station a:not(.btn) { font-weight: 700; }
 .maplinks { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
 .maplinks .btn { min-height: 40px; padding: 0.3rem 1rem; font-size: 0.9rem; }
+
+/* ===== Phone layout: compact product cards ===== */
+@media (max-width: 640px) {
+  .panel { padding: 1rem; }
+  .head { margin-bottom: 1rem; }
+  .grid { grid-template-columns: 1fr; gap: 0.8rem; }
+  .product { flex-direction: row; border-radius: 18px; }
+  .photo { flex: 0 0 38%; aspect-ratio: auto; min-height: 150px; border-bottom: 0; border-right: 2px solid var(--ink); }
+  .photo .stack { zoom: 0.5; }
+  .info { flex: 1; min-width: 0; gap: 0; padding: 0.7rem 0.9rem; }
+  .info h3 { font-size: 1.05rem; }
+  .info .muted { font-size: 0.85rem; line-height: 1.35; }
+  .price { margin-top: 0.15rem; font-size: 1.2rem; }
+  .avail { min-height: 0; font-size: 0.85rem; }
+  .info .btn { min-height: 40px; margin-top: 0.4rem; padding: 0.35rem 0.8rem; font-size: 0.9rem; }
+}
+
+/* On touch screens a tap leaves "hover" stuck, so the sway is turned off there */
+@media (hover: none) {
+  .slot:hover .product, .slot:focus-within .product { animation: none; transform: none; }
+}
