@@ -275,3 +275,12 @@ button.arow:hover { border-color: var(--ink); background: var(--sage); }
 .sect { margin-top: 1.1rem; font-size: 1.05rem; }
 .assign { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
 .assign select { flex: 1 1 200px; min-height: 48px; padding: 0.5rem 0.8rem; border: 2px solid var(--line); border-radius: 10px; font: inherit; background: var(--surface); }
+
+
+/* ===== Pickup station map links ===== */
+.station { align-items: flex-start; }
+.station::before { margin-top: 0.15rem; }
+.station h3 { margin-bottom: 0.15rem; }
+.station a:not(.btn) { font-weight: 700; }
+.maplinks { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.maplinks .btn { min-height: 40px; padding: 0.3rem 1rem; font-size: 0.9rem; }
