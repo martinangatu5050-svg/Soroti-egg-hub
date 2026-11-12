@@ -276,7 +276,6 @@ button.arow:hover { border-color: var(--ink); background: var(--sage); }
 .assign { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
 .assign select { flex: 1 1 200px; min-height: 48px; padding: 0.5rem 0.8rem; border: 2px solid var(--line); border-radius: 10px; font: inherit; background: var(--surface); }
 
-
 /* ===== Pickup station map links ===== */
 .station { align-items: flex-start; }
 .station::before { margin-top: 0.15rem; }

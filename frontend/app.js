@@ -37,7 +37,7 @@ window.addEventListener('unhandledrejection', (e) =>
 async function request(path, options) {
   let res;
   try {
-    res = await fetch('https://soroti-egg-hub-1.onrender.com/api' + path, options);
+        res = await fetch('/api' + path, options);
   } catch (err) {
     throw new Error('Cannot reach the shop server.');
   }
@@ -1263,7 +1263,6 @@ async function openAdmin() {
 
 route();
 
-
 // ===== PICKUP STATIONS WITH MAP LINKS =====
 // EDIT HERE: for each station fill in the landmark, opening hours and phone. Leave '' for any you don't have yet.
 // 'search' is what Google Maps looks up. For the exact spot, use latitude,longitude instead:
@@ -1314,3 +1313,21 @@ function renderStationCards() {
   }
 }
 renderStationCards();
+
+
+// ===== Cancelling an order after a payment was recorded =====
+function shopPhone() { return ''; } // EDIT: your shop's phone number between the quotes
+
+function orderNote(o) {
+  const call = 'To cancel this order, call the shop' + (shopPhone() ? ' on ' + shopPhone() : '') + '.';
+  if (o.status === 'cancelled') {
+    if (o.payment_status === 'refunded') return 'This order was cancelled and your payment has been refunded.';
+    if (o.payment_status === 'paid' || o.payment_status === 'awaiting_verification') return 'This order was cancelled. We will refund your payment.';
+    return 'This order was cancelled.';
+  }
+  if (o.payment_status === 'awaiting_verification') return 'We are checking your payment. Your order is released once it is confirmed. ' + call;
+  if (o.status === 'dispatched') return 'Your order is on the way.';
+  if (o.status === 'delivered') return 'Delivered. Thank you for ordering with us.';
+  if (o.payment_status === 'paid' && ['pending', 'processing'].includes(o.status)) return 'Your payment is confirmed. ' + call;
+  return '';
+}
