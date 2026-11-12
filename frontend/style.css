@@ -246,7 +246,7 @@ h3 { font-size: 1.25rem; }
   .nav a, .navbtn { flex-direction: row; justify-content: flex-start; gap: 0.9rem; width: 100%; min-height: 48px; padding: 0.6rem 0.75rem; font-size: 1rem; text-align: left; border-bottom: 1px solid var(--line); }
   .menu { display: block; }
   .dropdown { position: static; box-shadow: none; margin: 0.25rem 0 0.5rem; }
-  .badge { position: static; margin-left: auto; }
+  .badge { position: static; margin-left: auto; } 
 }
 
 /* ===== Admin screens ===== */
