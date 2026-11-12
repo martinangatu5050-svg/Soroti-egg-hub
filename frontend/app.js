@@ -1262,3 +1262,55 @@ async function openAdmin() {
 }
 
 route();
+
+
+// ===== PICKUP STATIONS WITH MAP LINKS =====
+// EDIT HERE: for each station fill in the landmark, opening hours and phone. Leave '' for any you don't have yet.
+// 'search' is what Google Maps looks up. For the exact spot, use latitude,longitude instead:
+// in Google Maps, right-click the exact place and click the numbers at the top of the menu to copy them.
+function stationList() {
+  return [
+    { name: 'Soroti Main Market', landmark: '', hours: '', phone: '', search: 'Soroti Main Market, Soroti, Uganda' },
+    { name: 'Soroti Avenue', landmark: '', hours: '', phone: '', search: 'Soroti Avenue, Soroti, Uganda' },
+    { name: 'Senior Quarters', landmark: '', hours: '', phone: '', search: 'Senior Quarters, Soroti, Uganda' },
+    { name: 'Camp Swahili', landmark: '', hours: '', phone: '', search: 'Camp Swahili, Soroti, Uganda' },
+    { name: 'Madera', landmark: '', hours: '', phone: '', search: 'Madera, Soroti, Uganda' },
+    { name: 'Kichinjaji', landmark: '', hours: '', phone: '', search: 'Kichinjaji, Soroti, Uganda' },
+    { name: 'Pamba', landmark: '', hours: '', phone: '', search: 'Pamba, Soroti, Uganda' }
+  ];
+}
+
+function renderStationCards() {
+  const list = document.querySelector('.stations');
+  if (!list) return;
+  list.replaceChildren();
+  const lead = document.querySelector('#view-stations .lead');
+  if (lead) lead.textContent = 'Collect your trays from any station for free. Tap View on map to see the spot, or Get directions to be guided there.';
+  for (const s of stationList()) {
+    const q = encodeURIComponent(s.search);
+    const li = el('li', 'station');
+    const box = el('div');
+    box.append(el('h3', '', s.name));
+    box.append(el('p', '', s.landmark || 'Free pickup, no delivery fee'));
+    if (s.landmark) box.append(el('p', 'muted', 'Free pickup, no delivery fee'));
+    if (s.hours) box.append(el('p', 'muted', 'Open: ' + s.hours));
+    if (s.phone) {
+      const p = el('p', 'muted');
+      const call = el('a', '', s.phone);
+      call.href = 'tel:' + s.phone.replace(/\s/g, '');
+      p.append('Call: ', call);
+      box.append(p);
+    }
+    const links = el('div', 'maplinks');
+    const view = el('a', 'btn btn-ghost', 'View on map');
+    view.href = 'https://www.google.com/maps/search/?api=1&query=' + q;
+    const go = el('a', 'btn btn-primary', 'Get directions');
+    go.href = 'https://www.google.com/maps/dir/?api=1&destination=' + q;
+    for (const a of [view, go]) { a.target = '_blank'; a.rel = 'noopener'; }
+    links.append(view, go);
+    box.append(links);
+    li.append(box);
+    list.appendChild(li);
+  }
+}
+renderStationCards();
